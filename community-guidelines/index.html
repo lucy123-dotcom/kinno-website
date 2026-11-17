@@ -7,7 +7,7 @@
   <meta name="description" content="What Kinno is for, and what we expect from everyone who turns up: be kind, and look after each other." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -15,73 +15,91 @@
       --kinno-blue: #5070FF;
       --deep-blue: #3A57EC;
       --faint-blue: #EEF1FF;
-      --cream: #FBF9F5;
-      --white: #FFFFFF;
-      --stone: #DED9CD;
       --ink: #1B1915;
       --warm-grey: #5C574E;
-      --soft-grey: #706A5D;
-      --shadow-navy: 31, 47, 118;
+      --line: #E8E9F3;
     }
 
     body {
-      background: var(--cream);
+      background: #FFFFFF;
       color: var(--warm-grey);
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 17px;
+      font-size: 18px;
       line-height: 1.6;
-      padding: 32px 20px 72px;
       -webkit-font-smoothing: antialiased;
     }
 
-    header, main, footer { max-width: 760px; margin: 0 auto; }
+    .site-header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--line);
+    }
 
-    header { margin-bottom: 36px; }
-    header a.logo { display: inline-block; }
-    header img { width: min(240px, 60vw); height: auto; display: block; }
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav .logo img { width: 150px; height: auto; display: block; }
+
+    .nav ul { list-style: none; display: flex; align-items: center; gap: 28px; margin: 0; }
+    .nav li { margin: 0; padding: 0; }
+    .nav li::before { content: none; }
+
+    .nav a.link {
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 17px;
+      text-decoration: none;
+    }
+    .nav a.link:hover { color: var(--deep-blue); }
+
+    .nav a.cta {
+      display: inline-block;
+      background: var(--deep-blue);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 6px 16px rgba(58, 87, 236, 0.28);
+    }
+    .nav a.cta:hover { background: #2D47CC; color: #FFFFFF; }
+
+    .page {
+      background: linear-gradient(180deg, #F4F5FE 0%, #FFFFFF 420px);
+      padding: 72px 20px 96px;
+    }
+
+    main { max-width: 760px; margin: 0 auto; }
 
     .eyebrow {
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.02em;
       text-transform: uppercase;
       color: var(--deep-blue);
-      margin: 36px 0 10px;
-    }
-
-    h1 {
-      font-size: clamp(38px, 7vw, 60px);
-      font-weight: 800;
-      color: var(--ink);
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-    }
-
-    h1 .hl { color: var(--kinno-blue); }
-
-    h2 {
-      font-size: clamp(24px, 4vw, 30px);
-      font-weight: 800;
-      color: var(--ink);
-      letter-spacing: -0.02em;
-      line-height: 1.15;
       margin-bottom: 14px;
     }
 
-    section {
-      background: var(--white);
-      border: 1px solid var(--stone);
-      border-radius: 20px;
-      padding: 28px 24px;
-      margin-bottom: 20px;
-      box-shadow: 0 6px 20px rgba(var(--shadow-navy), 0.06);
+    h1, h2 {
+      font-family: 'Fredoka', 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.01em;
     }
 
-    section.intro {
-      background: var(--faint-blue);
-      border-color: transparent;
-      box-shadow: none;
-    }
+    h1 { font-size: clamp(38px, 6.5vw, 60px); line-height: 1.1; margin-bottom: 40px; }
+    h1 .hl { color: var(--kinno-blue); }
+
+    h2 { font-size: clamp(26px, 4vw, 34px); line-height: 1.2; margin-bottom: 14px; }
+
+    section { margin-bottom: 52px; }
 
     p { margin-bottom: 14px; }
     p:last-child { margin-bottom: 0; }
@@ -92,7 +110,7 @@
       content: "";
       position: absolute;
       left: 4px;
-      top: 0.65em;
+      top: 0.7em;
       width: 9px;
       height: 9px;
       border-radius: 50%;
@@ -101,34 +119,45 @@
 
     strong { font-weight: 700; color: var(--ink); }
 
-    a { color: var(--deep-blue); font-weight: 600; }
-    a:hover { color: #2D47CC; }
+    main a { color: var(--deep-blue); font-weight: 600; }
+    main a:hover { color: #2D47CC; }
 
     footer {
-      margin-top: 40px;
+      border-top: 1px solid var(--line);
+      padding: 28px 20px;
       text-align: center;
       font-size: 14px;
     }
+    footer a { color: var(--deep-blue); font-weight: 600; text-decoration: none; }
 
-    @media (min-width: 600px) {
-      body { padding-top: 48px; }
-      section { padding: 32px 36px; }
+    @media (max-width: 640px) {
+      .nav ul li:not(:last-child) { display: none; }
+      .page { padding-top: 48px; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <a class="logo" href="/"><img src="/Kinno_logo.png" alt="Kinno" /></a>
-    <p class="eyebrow">Kinno community</p>
-    <h1>Community <span class="hl">guidelines.</span></h1>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="/"><img src="/Kinno_logo.png" alt="Kinno" /></a>
+      <ul>
+        <li><a class="link" href="/">Home</a></li>
+        <li><a class="link" href="/how-it-works">How it works</a></li>
+        <li><a class="link" href="/about">About</a></li>
+        <li><a class="cta" href="/#waitlist">Join waitlist</a></li>
+      </ul>
+    </nav>
   </header>
 
+  <div class="page">
   <main>
+    <p class="eyebrow">Community guidelines</p>
+    <h1>Turn up. Be kind. <span class="hl">Look after each other.</span></h1>
 
-    <section class="intro">
+<section>
       <h2>What Kinno is for</h2>
-      <div class="lede">
+      <div>
         <p>Kinno exists so adults can make real friends in person. Everything here comes down to one idea: turn up, be kind, and look after each other.</p>
         <p>Most people get this right without thinking about it. These guidelines are for the moments where it helps to know what's expected, and so everyone knows what we'll act on.</p>
       </div>
@@ -249,6 +278,7 @@
     </section>
 
   </main>
+  </div>
 
   <footer>
     <a href="/">Back to Kinno</a>
