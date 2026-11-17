@@ -5,89 +5,161 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Community Guidelines — Kinno</title>
   <meta name="description" content="What Kinno is for, and what we expect from everyone who turns up: be kind, and look after each other." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --brand: #4A5CF0;
-      --text: #1f2340;
-      --muted: #5b6080;
-      --tint: #f3f4fe;
+      --kinno-blue: #5070FF;
+      --deep-blue: #3A57EC;
+      --faint-blue: #EEF1FF;
+      --ink: #1B1915;
+      --warm-grey: #5C574E;
+      --line: #E8E9F3;
     }
 
     body {
-      background: #ffffff;
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #FFFFFF;
+      color: var(--warm-grey);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .site-header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav .logo img { width: 150px; height: auto; display: block; }
+
+    .nav ul { list-style: none; display: flex; align-items: center; gap: 28px; margin: 0; }
+    .nav li { margin: 0; padding: 0; }
+    .nav li::before { content: none; }
+
+    .nav a.link {
+      color: var(--ink);
+      font-weight: 600;
       font-size: 17px;
-      line-height: 1.65;
-      padding: 40px 24px 80px;
+      text-decoration: none;
     }
+    .nav a.link:hover { color: var(--deep-blue); }
 
-    header, main, footer { max-width: 720px; margin: 0 auto; }
-
-    header { text-align: center; margin-bottom: 40px; }
-    header a { display: inline-block; }
-    header img { width: min(200px, 50vw); height: auto; }
-
-    h1 {
-      font-size: clamp(34px, 6vw, 52px);
+    .nav a.cta {
+      display: inline-block;
+      background: var(--deep-blue);
+      color: #FFFFFF;
       font-weight: 700;
-      color: var(--brand);
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-top: 24px;
+      font-size: 16px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 6px 16px rgba(58, 87, 236, 0.28);
+    }
+    .nav a.cta:hover { background: #2D47CC; color: #FFFFFF; }
+
+    .page {
+      background: linear-gradient(180deg, #F4F5FE 0%, #FFFFFF 420px);
+      padding: 72px 20px 96px;
     }
 
-    h2 {
-      font-size: clamp(22px, 3.5vw, 28px);
-      color: var(--brand);
-      letter-spacing: -0.01em;
-      line-height: 1.2;
-      margin: 48px 0 14px;
+    main { max-width: 760px; margin: 0 auto; }
+
+    .eyebrow {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--deep-blue);
+      margin-bottom: 14px;
     }
+
+    h1, h2 {
+      font-family: 'Fredoka', 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    h1 { font-size: clamp(38px, 6.5vw, 60px); line-height: 1.1; margin-bottom: 40px; }
+    h1 .hl { color: var(--kinno-blue); }
+
+    h2 { font-size: clamp(26px, 4vw, 34px); line-height: 1.2; margin-bottom: 14px; }
+
+    section { margin-bottom: 52px; }
 
     p { margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
 
-    ul { margin: 0 0 16px 1.25em; }
-    li { margin-bottom: 8px; padding-left: 4px; }
-    li::marker { color: var(--brand); }
-
-    strong { font-weight: 650; }
-
-    .lede {
-      background: var(--tint);
-      border-radius: 14px;
-      padding: 20px 22px;
-      margin-top: 8px;
+    ul { list-style: none; margin: 0 0 16px; }
+    li { position: relative; padding-left: 24px; margin-bottom: 10px; }
+    li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 0.7em;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--kinno-blue);
     }
 
-    a { color: var(--brand); }
+    strong { font-weight: 700; color: var(--ink); }
+
+    main a { color: var(--deep-blue); font-weight: 600; }
+    main a:hover { color: #2D47CC; }
 
     footer {
-      margin-top: 64px;
-      padding-top: 20px;
-      border-top: 1px solid #e4e6f5;
-      font-size: 14px;
-      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding: 28px 20px;
       text-align: center;
+      font-size: 14px;
+    }
+    footer a { color: var(--deep-blue); font-weight: 600; text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .nav ul li:not(:last-child) { display: none; }
+      .page { padding-top: 48px; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <a href="./index.html"><img src="./Kinno_logo.png" alt="Kinno" /></a>
-    <h1>Community Guidelines</h1>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="/"><img src="/Kinno_logo.png" alt="Kinno" /></a>
+      <ul>
+        <li><a class="link" href="/">Home</a></li>
+        <li><a class="link" href="/how-it-works">How it works</a></li>
+        <li><a class="link" href="/about">About</a></li>
+        <li><a class="cta" href="/#waitlist">Join waitlist</a></li>
+      </ul>
+    </nav>
   </header>
 
+  <div class="page">
   <main>
+    <p class="eyebrow">Community guidelines</p>
+    <h1>Turn up. Be kind. <span class="hl">Look after each other.</span></h1>
 
-    <section>
+<section>
       <h2>What Kinno is for</h2>
-      <div class="lede">
+      <div>
         <p>Kinno exists so adults can make real friends in person. Everything here comes down to one idea: turn up, be kind, and look after each other.</p>
-        <p style="margin-bottom:0">Most people get this right without thinking about it. These guidelines are for the moments where it helps to know what's expected, and so everyone knows what we'll act on.</p>
+        <p>Most people get this right without thinking about it. These guidelines are for the moments where it helps to know what's expected, and so everyone knows what we'll act on.</p>
       </div>
       <p style="margin-top:16px"><strong>Where these apply.</strong> Everywhere Kinno takes you: the Pod or event itself, the drinks afterwards, the walk to the station, Pod and private chats in the app, and unwanted contact that carries on somewhere else once you've swapped details.</p>
     </section>
@@ -206,9 +278,10 @@
     </section>
 
   </main>
+  </div>
 
   <footer>
-    <a href="./index.html">Back to Kinno</a>
+    <a href="/">Back to Kinno</a>
   </footer>
 
 </body>
